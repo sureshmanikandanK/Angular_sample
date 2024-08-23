@@ -1,0 +1,12 @@
+<p>databinding works!</p>
+<!-- use of interpolation -->
+<h2>My name is {{myName}}</h2>
+<p>{{200+200}}</p>
+<hr>
+<!-- use of property binding -->
+<input [type]="myinputType">
+<hr>
+<button type="button" (click)="greeting()">call function</button>
+<hr>
+<input type="text" name="myinput" [(ngModel)]="mybreakfast">{{mybreakfast}}
+

@@ -1,0 +1,57 @@
+<p>directives works!</p>
+<h2 *ngIf="isCondition">Output of *ngIf </h2>
+
+<div *ngIf="hasValue then truepart else falsepart"></div>
+
+<ng-template #truepart>
+    <strong>User Login success</strong>
+</ng-template>
+<ng-template #falsepart>
+    <strong>Admin Login success</strong>
+</ng-template>
+
+<hr>
+<!-- use of *ngFor -->
+ <ul>
+    <li *ngFor="let course of frontEnd" (click)="clicklist(course)">{{course}}</li>
+ </ul>
+
+ <table border="">
+    <thead>
+        <tr>
+            <td>S.No</td>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Post</td>
+            <td>Company</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employee">
+            <td></td>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.post}}</td>
+            <td>{{emp.company}}</td>
+        </tr>
+    </tbody>
+ </table>
+
+
+ <!-- <div [ngSwitch]="selectedCourse">
+    <div *ngSwitchcase="'Html'">You have selected Html</div>
+    <div *ngSwitchcase="'Css'">You have selected Css</div>
+    <div *ngSwitchcase="'Bootstrap'">You have selected Bootstrap</div>
+    <div *ngSwitchcase="'React'">You have selected React</div>
+    <div *ngSwitchcase="'Angular'">You have selected Angular</div>
+    <div *ngSwitchcase="'JavaScript'">You have selected JavaScript</div>
+    <div *ngSwitchDefault>Select any course</div>
+ </div> -->
+
+ <div [ngSwitch]="selectedCourse">
+    <div *ngFor="let course of frontEnd">
+        <div *ngSwitchCase="course">You have selected {{course}}</div>
+    </div>
+    <div *ngSwitchDefault>Select any course</div>
+</div>
